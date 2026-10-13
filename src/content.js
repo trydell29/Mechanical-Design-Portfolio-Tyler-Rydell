@@ -99,7 +99,7 @@ export const leadership = [
     dates: "May 2026 – Present",
     bullets: [
       "Promoted to team lead by the coach after contributing to programming and CAD on the team's VEX U robot through a VEX Worlds run",
-      "Coordinate design and programming sub-teams across deadlines and design constraints, keeping a stable shared codebase through robot iterations",
+      "Coordinated design and programming sub-teams across deadlines and design constraints, keeping a stable shared codebase through robot iterations",
       "Increased team membership from 10 to 30 members",
     ],
   },
