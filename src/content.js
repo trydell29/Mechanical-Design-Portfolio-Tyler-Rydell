@@ -23,7 +23,7 @@ export const about = {
   heading: "About me",
   paragraphs: [
     "I'm an Engineering Science student at Bergen Community College with a 4.0 GPA and a passion for robotics, automation, and mechanical systems. I am planning to transfer to a four-year university to study Mechanical Engineering or Robotics Engineering in Fall 2027.",
-    "This past summer I led the design of a low-cost prosthetic arm that took first place out of 42 teams at the STEM Research Center poster competition, and then presented the continuted research at the Northeast Robotics Colloquium at PrincetonUniversity. I also built and modified prototypes as a prototype engineering intern at Flores Engineering.",
+    "This past summer I led the design of a low-cost prosthetic arm that took first place out of 42 teams at the STEM Research Center poster competition, and then presented the continuted research at the Northeast Robotics Colloquium at Princeton University. I also built and modified prototypes as a prototype engineering intern at Flores Engineering.",
     "I currently teach soldering and 3D printing at Bergen's STEM Research Center (makerspace) and am the president Bergen Robotics, our VEX U team, which qualified for the VEX U World Championship, as well at the STEAM Club on campus."
   ],
   facts: [
@@ -215,7 +215,7 @@ export const projects = [
       { x: 15, y: 62, lx: 24, ly: 128, label: "2-DOF elbow driven by custom 64:1 and 4:1 planetary gearboxes" },
       { x: 66, y: 52, lx: 58, ly: 128, label: "1-DOF servo wrist" },
       { x: 82, y: 43, lx: 74, ly: -28, label: "Direct-drive finger splay servos" },
-      { x: 93, y: 18, lx: 98, ly: -28, label: "Tendon-driven fingers, fully 3D printed in PLA and PETG-CF" },
+      { x: 93, y: 18, lx: 98, ly: -28, label: "Tendon-driven fingers" },
     ],
     notes: [
       "ESP32 control portal with manual, preset, and camera-based hand tracking modes",
