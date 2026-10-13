@@ -532,7 +532,6 @@ a {
 /* About banner */
 .about {
   background: var(--sheet);
-  border-top: 1.5px solid var(--ink);
   border-bottom: 1.5px solid var(--ink);
   padding: clamp(32px, 5vw, 56px) 0;
 }

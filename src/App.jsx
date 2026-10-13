@@ -186,13 +186,13 @@ export default function App() {
         </div>
       </header>
 
+      <About />
+
       <main id="work" className="wrap">
         {projects.map((p) => (
           <Project key={p.id} project={p} />
         ))}
       </main>
-
-      <About />
 
       <footer className="footer">
         <div className="wrap footer__inner">
