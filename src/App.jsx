@@ -2,22 +2,12 @@ import { useState } from "react";
 import { site, about, projects } from "./content.js";
 
 function Figure({ project, active, setActive }) {
-  const { id, image, callouts } = project;
-  const markerId = `arrow-${id}`;
-  const markerActiveId = `arrow-${id}-active`;
+  const { image, callouts } = project;
   return (
     <figure className={`figure ${image.wide ? "figure--wide" : ""}`}>
       <div className="figure__stage">
         <img src={image.src} alt={image.alt} />
         <svg className="leaders" aria-hidden="true">
-          <defs>
-            <marker id={markerId} viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse">
-              <path d="M0,0 L10,5 L0,10 z" className="leaders__head" />
-            </marker>
-            <marker id={markerActiveId} viewBox="0 0 10 10" refX="9" refY="5" markerWidth="11" markerHeight="11" markerUnits="userSpaceOnUse" orient="auto-start-reverse">
-              <path d="M0,0 L10,5 L0,10 z" className="leaders__head is-active" />
-            </marker>
-          </defs>
           {callouts.map((c, i) => {
             const lx = c.lx ?? c.x;
             const ly = c.ly ?? c.y;
@@ -31,7 +21,6 @@ function Figure({ project, active, setActive }) {
                   y1={`${ly}%`}
                   x2={`${c.x}%`}
                   y2={`${c.y}%`}
-                  markerEnd={`url(#${isActive ? markerActiveId : markerId})`}
                 />
               </g>
             );

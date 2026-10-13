@@ -248,12 +248,7 @@ a {
   stroke-width: 1.5;
   transition: stroke 0.15s;
 }
-.leaders__head {
-  fill: var(--ink);
-}
-.leaders__head.is-active,
 .leaders g.is-active .leaders__line {
-  fill: var(--accent);
   stroke: var(--accent);
 }
 .leaders g.is-active .leaders__line {
