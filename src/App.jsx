@@ -69,6 +69,46 @@ function useReveal() {
   }, []);
 }
 
+// Silent clip that plays while it's on screen and pauses when scrolled away.
+// Muted is set on the element directly so browsers (iOS included) allow autoplay.
+function ScrollVideo({ src, poster }) {
+  const ref = useRef(null);
+  useEffect(() => {
+    const v = ref.current;
+    if (!v) return;
+    v.muted = true;
+    v.defaultMuted = true;
+    v.setAttribute("muted", "");
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduce || !("IntersectionObserver" in window)) return;
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          v.play().catch(() => {});
+        } else {
+          v.pause();
+        }
+      },
+      { threshold: 0.35 }
+    );
+    io.observe(v);
+    return () => io.disconnect();
+  }, []);
+  return (
+    <video
+      ref={ref}
+      src={src}
+      poster={poster}
+      muted
+      loop
+      playsInline
+      controls
+      disablePictureInPicture
+      preload="metadata"
+    />
+  );
+}
+
 function Figure({ project, active, setActive }) {
   const { image, callouts } = project;
   return (
@@ -188,7 +228,7 @@ function Project({ project }) {
           {extras.map((item, i) =>
             item.video ? (
               <figure key={i} className="gallery__item gallery__item--video">
-                <video src={item.video} poster={item.poster} autoPlay muted loop playsInline controls preload="metadata" />
+                <ScrollVideo src={item.video} poster={item.poster} />
                 {item.caption && <figcaption>{item.caption}</figcaption>}
               </figure>
             ) : (
