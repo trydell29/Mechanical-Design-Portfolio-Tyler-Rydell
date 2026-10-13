@@ -229,8 +229,10 @@ export const projects = [
       "A self-contained, rechargeable wireless device for sound wave labs. It reads microphone data on a microcontroller and sends it to a student's iPhone to detect resonance states.",
     image: { src: "/images/resonance-finder.png", alt: "CAD render of the Resonance Finder enclosure with a lit push button" },
     callouts: [
-      { x: 45, y: 29, lx: 12, ly: 6, label: "Lit push button" },
-      { x: 66, y: 81, lx: 94, ly: 96, label: "Charging port" },
+      { x: 39.6, y: 22.2, lx: 10, ly: 4, label: "Microphone, mounted flush in the lid" },
+      { x: 86.3, y: 35.7, lx: 104, ly: 22, label: "Hex screws hold the removable lid for access to the electronics" },
+      { x: 73.3, y: 56, lx: 104, ly: 48, label: "USB-C port for charging and programming" },
+      { x: 74.7, y: 71.3, lx: 104, ly: 80, label: "Power switch" },
     ],
     notes: [],
     result: "",
