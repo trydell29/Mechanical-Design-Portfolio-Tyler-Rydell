@@ -196,7 +196,7 @@ export default function App() {
 
       <footer className="footer">
         <div className="wrap footer__inner">
-          <p className="footer__lead">Looking for a summer 2027 engineering internship.</p>
+          <p className="footer__lead">{site.footer}</p>
           <ul className="footer__links">
             {links.map((l) => (
               <li key={l.label}>
