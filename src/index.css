@@ -1455,3 +1455,20 @@ body {
     justify-content: center;
   }
 }
+
+/* Resume link under the bio */
+.about__resume {
+  display: inline-block;
+  margin-top: 18px;
+  padding: 8px 16px;
+  border: 1.5px solid var(--accent);
+  border-radius: 999px;
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.2s, color 0.2s;
+}
+.about__resume:hover {
+  background: var(--accent);
+  color: var(--bg-deep);
+}

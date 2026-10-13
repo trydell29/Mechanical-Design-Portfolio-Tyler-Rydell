@@ -194,7 +194,7 @@ export const skills = [
       "Power Distribution and Wiring",
     ],
   ],
-  ["Software", ["C++", "Python", "Version Control (Git)", "Artificial Intelligence (AI)"]],
+  ["Software", ["C++", "Python", "Version Control (Git)"]],
 ];
 
 export const projects = [

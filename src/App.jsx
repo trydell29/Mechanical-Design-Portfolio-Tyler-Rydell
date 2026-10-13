@@ -388,6 +388,11 @@ function About() {
           {about.paragraphs.map((p) => (
             <p key={p}>{p}</p>
           ))}
+          {site.resume && (
+            <a className="about__resume" href={site.resume} target="_blank" rel="noreferrer">
+              View my resume (PDF)
+            </a>
+          )}
         </div>
         <dl className="titleblock about__facts">
           {about.facts.map(([k, v]) => (
