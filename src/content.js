@@ -62,6 +62,21 @@ export const projects = [
       { src: "/images/ara-hand.png", alt: "CAD render of the ARA hand", caption: "Hand" },
       { src: "/images/ara-elbow.png", alt: "CAD render of the ARA elbow joint", caption: "Elbow joint" },
     ],
+    // Photos from talks and poster sessions, shown under "Presented at".
+    presentations: [
+      {
+        src: "/images/nerc-princeton.jpg",
+        alt: "Tyler standing next to the BARAA research poster at the Northeast Robotics Colloquium",
+        title: "Northeast Robotics Colloquium (NERC), Princeton University",
+        caption: "October 2026. Presented BARAA, our benchmark for the mechanical ability of humanoid and prosthetic arms, with this arm as the first reference design.",
+      },
+      {
+        src: "/images/bergen-poster-competition.jpg",
+        alt: "Tyler next to the research poster and the working arm at the Bergen STEM poster competition",
+        title: "Bergen STEM research poster competition",
+        caption: "August 2026. First place out of 42 teams, with the working arm on display.",
+      },
+    ],
   },
   {
     id: "head",

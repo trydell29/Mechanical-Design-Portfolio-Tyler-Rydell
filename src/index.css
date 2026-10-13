@@ -585,3 +585,56 @@ a {
     width: 140px;
   }
 }
+
+/* Presented at: photos from talks and poster sessions */
+.presented {
+  margin-top: clamp(32px, 5vw, 48px);
+}
+
+.presented h3 {
+  margin: 0 0 16px;
+  font-size: 1.25rem;
+  font-weight: 750;
+  font-variation-settings: "wdth" 108;
+}
+
+.presented__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.presented__item {
+  margin: 0;
+  background: var(--sheet);
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.presented__item img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center 30%;
+}
+
+.presented__item figcaption {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 14px 16px 16px;
+  border-top: 1px solid var(--rule);
+}
+
+.presented__item figcaption span {
+  color: var(--muted);
+  font-size: 0.9375rem;
+  line-height: 1.45;
+}
+
+@media (max-width: 600px) {
+  .presented__grid {
+    grid-template-columns: 1fr;
+  }
+}

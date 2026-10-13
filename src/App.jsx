@@ -116,6 +116,22 @@ function Project({ project }) {
           )}
         </div>
       )}
+      {project.presentations?.length > 0 && (
+        <div className="presented">
+          <h3>Presented at</h3>
+          <div className="presented__grid">
+            {project.presentations.map((item) => (
+              <figure key={item.src} className="presented__item">
+                <img src={item.src} alt={item.alt} loading="lazy" />
+                <figcaption>
+                  <strong>{item.title}</strong>
+                  <span>{item.caption}</span>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        </div>
+      )}
     </section>
   );
 }
