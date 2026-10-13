@@ -12,7 +12,7 @@ export const site = {
   email: "trydell29@gmail.com",
   linkedin: "https://www.linkedin.com/in/tylerrydell",
   github: "https://github.com/trydell29",
-  footer: "Seeking mechanical engineering internship opportunities for summer 2027.",
+  footer: "Seeking summer 2027 internships in mechanical engineering, robotics, and automation.",
   resume: "", // later: put resume.pdf in /public and set this to "/resume.pdf"
 };
 
