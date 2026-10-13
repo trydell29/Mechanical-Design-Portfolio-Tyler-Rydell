@@ -29,7 +29,7 @@ export const about = {
     ["Education", "A.S. Engineering Science, Bergen Community College (May 2027)"],
     ["GPA", "4.0 / 4.0"],
     // A list value shows one item per line across the full width.
-    ["Leadership", ["President, Bergen Robotics (VEX U)", "President, STEAM Academics Association"]],
+    ["Leadership", ["President, Bergen Robotics", "President, STEAM Academics Association"]],
     [
       "Honors",
       [
@@ -94,7 +94,7 @@ export const experience = [
 
 export const leadership = [
   {
-    title: "President, Bergen Robotics (VEX U)",
+    title: "President, Bergen Robotics",
     dates: "May 2026 – Present",
     bullets: [
       "Promoted to team lead by the coach after contributing to programming and CAD on the team's VEX U robot through a VEX Worlds run",
