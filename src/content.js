@@ -9,10 +9,10 @@ export const site = {
   name: "Tyler Rydell",
   tagline:
     "Mechanical engineering student building low-cost robotic systems. Engineering Science at Bergen Community College.",
-  email: "", // TODO: add the email you want recruiters to use
-  linkedin: "", // TODO: full LinkedIn URL
+  email: "trydell29@gmail.com",
+  linkedin: "https://www.linkedin.com/in/tylerrydell",
   github: "https://github.com/trydell29",
-  resume: "/resume.pdf", // drop your resume into /public as resume.pdf
+  resume: "", // later: put resume.pdf in /public and set this to "/resume.pdf"
 };
 
 export const projects = [
