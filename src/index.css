@@ -515,13 +515,21 @@ a {
 }
 
 .gallery__item--video {
-  padding: 0;
-  overflow: hidden;
   grid-column: 1 / -1;
-  background: #000;
+  justify-content: center;
+  padding: clamp(16px, 3vw, 28px);
+  background: var(--bg-deep);
+  border: 1px solid var(--rule);
 }
 .gallery__item--video video {
-  width: 100%;
+  width: auto;
+  max-width: 100%;
+  max-height: min(640px, 75vh);
+  border-radius: 8px;
+  background: #000;
+}
+.gallery__item--video figcaption {
+  color: var(--muted);
 }
 
 /* Presented at */
@@ -1360,4 +1368,15 @@ body {
 /* Skills: groups wrap to fit */
 .skills {
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+/* With a video: portrait clip on the left, renders stacked on the right */
+@media (min-width: 761px) {
+  .gallery--has-video {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
+  .gallery--has-video .gallery__item--video {
+    grid-column: 1;
+    grid-row: span 2;
+  }
 }

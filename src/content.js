@@ -221,7 +221,9 @@ export const projects = [
     ],
     result:
       "First place out of 42 teams at a multi-institution STEM research poster competition. Presented the follow-up benchmark (BARAA) at the Northeast Robotics Colloquium at Princeton.",
-    video: "", // e.g. "/images/ara-demo.mp4"
+    video: "/images/ara-demo.mp4",
+    videoPoster: "/images/ara-demo-poster.jpg",
+    videoCaption: "Controlling the arm live at the Bergen STEM research poster competition",
     gallery: [
       { src: "/images/ara-hand.png", alt: "CAD render of the ARA hand", caption: "Hand" },
       { src: "/images/ara-elbow.png", alt: "CAD render of the ARA elbow joint", caption: "Elbow joint" },
