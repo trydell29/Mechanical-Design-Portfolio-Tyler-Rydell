@@ -17,8 +17,8 @@
   --sheet-grid: rgba(12, 35, 64, 0.06);
   --sheet-ink: #14233a;
 
-  --accent: #f2a65a;
-  --accent-ink: #d8742a;
+  --accent: #86dcc1;
+  --accent-ink: #2f9a7c;
 
   --font: "Archivo Variable", "Archivo", system-ui, sans-serif;
   --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
@@ -46,7 +46,7 @@ body {
   background-color: var(--bg);
   background-image:
     radial-gradient(1200px 700px at 85% -10%, rgba(80, 140, 220, 0.22), transparent 60%),
-    radial-gradient(900px 600px at -10% 35%, rgba(242, 166, 90, 0.07), transparent 60%),
+    radial-gradient(900px 600px at -10% 35%, rgba(134, 220, 193, 0.06), transparent 60%),
     linear-gradient(var(--grid) 1px, transparent 1px),
     linear-gradient(90deg, var(--grid) 1px, transparent 1px),
     linear-gradient(var(--grid-strong) 1px, transparent 1px),
