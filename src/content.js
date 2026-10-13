@@ -205,7 +205,7 @@ export const projects = [
       ["When", "Oct 2025 – Aug 2026"],
       ["Team", "6 people"],
       ["Role", "Lead: firmware, circuits, most mechanical design"],
-      ["Controller", "ESP32"],
+      ["Tools", "Onshape, C++, Python, ESP32"],
     ],
     summary:
       "A 12-DOF tendon-driven prosthetic arm, built as a proof of concept for an affordable alternative to commercial myoelectric hands at under $300 per unit.",
@@ -250,7 +250,7 @@ export const projects = [
       ["When", "September 2026"],
       ["Team", "Solo design within Dr. Joseph Sivo's research team"],
       ["Role", "Mechanical and electrical design"],
-      ["Controller", "Arduino Nano"],
+      ["Tools", "Onshape, Arduino Nano"],
     ],
     summary:
       "A precision mount for a LiDAR module used to measure the velocity and acceleration of falling objects and extract their drag coefficients.",
@@ -279,7 +279,7 @@ export const projects = [
       ["When", "August 2026"],
       ["Team", "Solo"],
       ["Role", "Design, build, code"],
-      ["Controller", "Arduino Uno R4"],
+      ["Tools", "Onshape, Arduino Uno R4"],
     ],
     summary:
       "A personal build to explore expressive motion: a 2-DOF neck and 2-DOF eyes driven by servo linkages, controllable by joystick or running autonomously.",
@@ -303,7 +303,7 @@ export const projects = [
       ["When", "Fall 2026"],
       ["Team", "Solo honors project"],
       ["Advisor", "Dr. Neel Haldolaarachchige"],
-      ["Controller", "ESP32-C3"],
+      ["Tools", "Onshape, ESP32-C3"],
     ],
     summary:
       "A self-contained, rechargeable wireless device for sound wave labs. It reads microphone data on a microcontroller and sends it to a student's iPhone to detect resonance states.",
