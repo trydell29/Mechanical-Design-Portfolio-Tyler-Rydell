@@ -22,9 +22,9 @@ export const about = {
   photo: { src: "/images/headshot.jpg", alt: "Portrait of Tyler Rydell" },
   heading: "About me",
   paragraphs: [
-    "I'm an Engineering Science student at Bergen Community College with a 4.0 GPA, transferring as a mechanical engineering major in Fall 2027. I design and build electromechanical systems: tendon-driven robotic hands, animatronics, precision fixtures, and the electronics that run them.",
-    "I came to Bergen to play baseball and study physical therapy, and found engineering instead. Since then I've led the design of a low-cost prosthetic arm that took first place out of 42 teams and went on to the Northeast Robotics Colloquium at Princeton, and built prototypes as an engineering intern at Flores Engineering. Today I teach soldering and 3D printing at Bergen's STEM Research Center and lead Bergen Robotics, our VEX U team, which qualified for the VEX U World Championship.",
-    "Long term, I'm working toward a PhD in robotics.",
+    "I'm an Engineering Science student at Bergen Community College with a 4.0 GPA with a passion for robotics, automation, and mechanical systems. I am planning to transferto a four-year university to study Mechanical Engineering or Robotics Engineering in Fall 2027.",
+    "This past summer I led the design of a low-cost prosthetic arm that took first place out of 42 teams at the STEM Research Center poster competition, and then presented the continuted research at the Northeast Robotics Colloquium at PrincetonUniversity. I also built and modified prototypes as a prototype engineering intern at Flores Engineering.",
+    "I currently teach soldering and 3D printing at Bergen's STEM Research Center (makerspace) and am the president Bergen Robotics, our VEX U team, which qualified for the VEX U World Championship, as well at the STEAM Club on campus."
   ],
   facts: [
     ["Education", "A.S. Engineering Science, Bergen Community College (May 2027)"],
