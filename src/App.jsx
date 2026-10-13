@@ -2,17 +2,47 @@ import { useState } from "react";
 import { site, about, projects } from "./content.js";
 
 function Figure({ project, active, setActive }) {
-  const { image, callouts } = project;
+  const { id, image, callouts } = project;
+  const markerId = `arrow-${id}`;
+  const markerActiveId = `arrow-${id}-active`;
   return (
     <figure className={`figure ${image.wide ? "figure--wide" : ""}`}>
       <div className="figure__stage">
         <img src={image.src} alt={image.alt} />
+        <svg className="leaders" aria-hidden="true">
+          <defs>
+            <marker id={markerId} viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse">
+              <path d="M0,0 L10,5 L0,10 z" className="leaders__head" />
+            </marker>
+            <marker id={markerActiveId} viewBox="0 0 10 10" refX="9" refY="5" markerWidth="11" markerHeight="11" markerUnits="userSpaceOnUse" orient="auto-start-reverse">
+              <path d="M0,0 L10,5 L0,10 z" className="leaders__head is-active" />
+            </marker>
+          </defs>
+          {callouts.map((c, i) => {
+            const lx = c.lx ?? c.x;
+            const ly = c.ly ?? c.y;
+            const isActive = active === i;
+            return (
+              <g key={i} className={isActive ? "is-active" : ""}>
+                <line className="leaders__halo" x1={`${lx}%`} y1={`${ly}%`} x2={`${c.x}%`} y2={`${c.y}%`} />
+                <line
+                  className="leaders__line"
+                  x1={`${lx}%`}
+                  y1={`${ly}%`}
+                  x2={`${c.x}%`}
+                  y2={`${c.y}%`}
+                  markerEnd={`url(#${isActive ? markerActiveId : markerId})`}
+                />
+              </g>
+            );
+          })}
+        </svg>
         {callouts.map((c, i) => (
           <button
             key={i}
             type="button"
             className={`dot ${active === i ? "is-active" : ""}`}
-            style={{ left: `${c.x}%`, top: `${c.y}%` }}
+            style={{ left: `${c.lx ?? c.x}%`, top: `${c.ly ?? c.y}%` }}
             onMouseEnter={() => setActive(i)}
             onMouseLeave={() => setActive(null)}
             onFocus={() => setActive(i)}
@@ -140,24 +170,29 @@ export default function App() {
       <header className="hero">
         <div className="wrap">
           <h1 className="hero__name">{site.name}</h1>
-          <p className="hero__tagline">{site.tagline}</p>
-          <nav className="hero__index" aria-label="Projects">
-            {projects.map((p) => (
-              <a key={p.id} href={`#${p.id}`}>
-                {p.short}
-              </a>
-            ))}
+          <nav className="hero__index" aria-labelledby="project-list-title">
+            <h2 id="project-list-title" className="hero__index-title">Projects</h2>
+            <ul>
+              {projects.map((p) => (
+                <li key={p.id}>
+                  <a href={`#${p.id}`}>
+                    <span className="hero__index-name">{p.short}</span>
+                    <span className="hero__index-when">{p.meta.find(([k]) => k === "When")?.[1]}</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
           </nav>
         </div>
       </header>
-
-      <About />
 
       <main id="work" className="wrap">
         {projects.map((p) => (
           <Project key={p.id} project={p} />
         ))}
       </main>
+
+      <About />
 
       <footer className="footer">
         <div className="wrap footer__inner">
