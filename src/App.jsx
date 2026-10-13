@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { site, projects } from "./content.js";
+import { site, about, projects } from "./content.js";
 
 function Figure({ project, active, setActive }) {
   const { image, callouts } = project;
@@ -101,6 +101,30 @@ function Project({ project }) {
   );
 }
 
+function About() {
+  return (
+    <section className="about" aria-labelledby="about-title">
+      <div className="wrap about__inner">
+        <img className="about__photo" src={about.photo.src} alt={about.photo.alt} />
+        <div className="about__text">
+          <h2 id="about-title">{about.heading}</h2>
+          {about.paragraphs.map((p) => (
+            <p key={p}>{p}</p>
+          ))}
+        </div>
+        <dl className="titleblock about__facts">
+          {about.facts.map(([k, v]) => (
+            <div key={k}>
+              <dt>{k}</dt>
+              <dd>{v}</dd>
+            </div>
+          ))}
+        </dl>
+      </div>
+    </section>
+  );
+}
+
 export default function App() {
   const links = [
     site.email && { href: `mailto:${site.email}`, label: "Email" },
@@ -126,6 +150,8 @@ export default function App() {
           </nav>
         </div>
       </header>
+
+      <About />
 
       <main id="work" className="wrap">
         {projects.map((p) => (

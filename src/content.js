@@ -15,6 +15,22 @@ export const site = {
   resume: "", // later: put resume.pdf in /public and set this to "/resume.pdf"
 };
 
+// The "About me" banner near the top of the page.
+export const about = {
+  photo: { src: "/images/headshot.jpg", alt: "Portrait of Tyler Rydell" },
+  heading: "About me",
+  paragraphs: [
+    "I came to Bergen to play baseball and study physical therapy. I found engineering there instead and switched majors.",
+    "Now I'm an Engineering Science student, president of Bergen Robotics (our VEX U team), and I work in the college makerspace. Most of what I build moves: robotic hands, animatronics, and the fixtures and enclosures that hold them together. I'm transferring as a mechanical engineering major in Fall 2027, with a PhD in robotics as the long-term goal.",
+  ],
+  facts: [
+    ["Studying", "Engineering Science, AS"],
+    ["GPA", "4.0"],
+    ["Leadership", "President, Bergen Robotics"],
+    ["Honors", "Winn School of Honors, Phi Theta Kappa"],
+  ],
+};
+
 export const projects = [
   {
     id: "ara",
