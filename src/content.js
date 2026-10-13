@@ -300,11 +300,6 @@ export const projects = [
     result: "",
     videos: [
       {
-        src: "/images/head-demo-assembled.mp4",
-        poster: "/images/head-demo-assembled-poster.jpg",
-        caption: "The assembled head on its base",
-      },
-      {
         src: "/images/head-demo-eyes.mp4",
         poster: "/images/head-demo-eyes-poster.jpg",
         caption: "Early test of the eye mechanism",
