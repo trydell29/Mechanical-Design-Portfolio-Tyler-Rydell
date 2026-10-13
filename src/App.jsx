@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { site, about, projects } from "./content.js";
+import { site, about, projects, experience, leadership, awards, skills } from "./content.js";
 import { Geo, Divider } from "./Geometry.jsx";
 
 const GEO = {
@@ -210,6 +210,103 @@ function Project({ project }) {
   );
 }
 
+function SectionHead({ id, children }) {
+  return (
+    <div className="project__head section__head" data-reveal>
+      <h2 id={id}>
+        <span className="wipe">{children}</span>
+      </h2>
+    </div>
+  );
+}
+
+function Role({ role, i }) {
+  return (
+    <li className={`role ${role.bullets ? "role--major" : ""}`} style={{ "--i": i }}>
+      <div className="role__top">
+        <h4>{role.title}</h4>
+        <span className="role__dates">{role.dates}</span>
+      </div>
+      {role.bullets && (
+        <ul className="role__bullets">
+          {role.bullets.map((b) => (
+            <li key={b}>{b}</li>
+          ))}
+        </ul>
+      )}
+    </li>
+  );
+}
+
+function Experience() {
+  return (
+    <section className="section" id="experience" aria-labelledby="experience-title">
+      <Divider />
+      <SectionHead id="experience-title">Experience</SectionHead>
+      {experience.map((e) => (
+        <div key={e.org} className="org" data-reveal>
+          <div className="org__name">
+            <h3>{e.org}</h3>
+            <span>{e.place}</span>
+          </div>
+          <ol className="timeline">
+            {e.roles.map((r, i) => (
+              <Role key={r.title} role={r} i={i} />
+            ))}
+          </ol>
+        </div>
+      ))}
+    </section>
+  );
+}
+
+function Leadership() {
+  return (
+    <section className="section" id="leadership" aria-labelledby="leadership-title">
+      <Divider />
+      <SectionHead id="leadership-title">Leadership and awards</SectionHead>
+      <div className="lead" data-reveal>
+        <ol className="timeline">
+          {leadership.map((r, i) => (
+            <Role key={r.title} role={r} i={i} />
+          ))}
+        </ol>
+        <div className="awards">
+          <h3>Awards and honors</h3>
+          <ul>
+            {awards.map((a, i) => (
+              <li key={a} style={{ "--i": i }}>
+                {a}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Skills() {
+  return (
+    <section className="section" id="skills" aria-labelledby="skills-title">
+      <Divider />
+      <SectionHead id="skills-title">Skills</SectionHead>
+      <div className="skills" data-reveal>
+        {skills.map(([group, items], g) => (
+          <div key={group} className="skills__group" style={{ "--i": g }}>
+            <h3>{group}</h3>
+            <ul>
+              {items.map((it) => (
+                <li key={it}>{it}</li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
 function About() {
   return (
     <section className="about" aria-labelledby="about-title">
@@ -289,6 +386,9 @@ export default function App() {
             <Project project={p} />
           </div>
         ))}
+        <Experience />
+        <Leadership />
+        <Skills />
       </main>
 
       <footer className="footer">

@@ -16,21 +16,105 @@ export const site = {
   resume: "", // later: put resume.pdf in /public and set this to "/resume.pdf"
 };
 
-// The "About me" banner near the top of the page.
+// The "About me" section near the top of the page.
 export const about = {
   photo: { src: "/images/headshot.jpg", alt: "Portrait of Tyler Rydell" },
   heading: "About me",
   paragraphs: [
-    "I came to Bergen to play baseball and study physical therapy. I found engineering there instead and switched majors.",
-    "Now I'm an Engineering Science student, president of Bergen Robotics (our VEX U team), and I work in the college makerspace. Most of what I build moves: robotic hands, animatronics, and the fixtures and enclosures that hold them together. I'm transferring as a mechanical engineering major in Fall 2027, with a PhD in robotics as the long-term goal.",
+    "I'm an Engineering Science student at Bergen Community College with a 4.0 GPA, transferring as a mechanical engineering major in Fall 2027. I design and build electromechanical systems: tendon-driven robotic hands, animatronics, precision fixtures, and the electronics that run them.",
+    "I came to Bergen to play baseball and study physical therapy, and found engineering instead. Since then I've led the design of a low-cost prosthetic arm that took first place out of 42 teams and went on to the Northeast Robotics Colloquium at Princeton, and built prototypes as an engineering intern at Flores Engineering. Today I teach soldering and 3D printing at Bergen's STEM Research Center and lead Bergen Robotics, our VEX U team.",
+    "Long term, I'm working toward a PhD in robotics.",
   ],
   facts: [
-    ["Studying", "Engineering Science, AS"],
-    ["GPA", "4.0"],
-    ["Leadership", "President, Bergen Robotics"],
-    ["Honors", "Winn School of Honors, Phi Theta Kappa"],
+    ["Education", "A.S. Engineering Science, Bergen CC, 2027"],
+    ["GPA", "4.0 / 4.0"],
+    ["Leadership", "President, Bergen Robotics and STEAM Academics Association"],
+    ["Honors", "Winn School of Honors, Phi Theta Kappa, 2x Dean's List"],
   ],
 };
+
+// Work and research history, newest first. Roles without bullets show as one line.
+export const experience = [
+  {
+    org: "STEM Research Center, Bergen Community College",
+    place: "Paramus, NJ",
+    roles: [
+      {
+        title: "Research Volunteer, Bergen Anthropomorphic Robotic Arm Assessment (BARAA)",
+        dates: "Sep 2026 – Present",
+        bullets: [
+          "Building a classification benchmark for the mechanical ability of humanoid and prosthetic arms, presented at the Northeast Robotics Colloquium (NERC) 2026 at Princeton",
+        ],
+      },
+      { title: "Research Volunteer, 10-Meter Drop Tower", dates: "Sep 2026 – Present" },
+      { title: "STEM Student Worker", dates: "Sep 2026 – Present" },
+      { title: "3D Printing Instructor", dates: "Aug 2026 – Present" },
+      {
+        title: "Soldering Instructor",
+        dates: "Apr 2026 – Present",
+        bullets: ["Teach soldering technique to students across skill levels in the campus workshop"],
+      },
+      {
+        title: "Summer Research Intern",
+        dates: "May 2026 – Aug 2026",
+        bullets: [
+          "Delivered a prosthetic arm proof-of-concept prototype and research poster with a six-member team",
+          "Won first place at the STEM Research Center poster competition against 41 other teams across multiple institutions",
+          "Owned embedded C++ firmware, circuit design, and most of the mechanical design while coordinating sub-teams to hit deadlines",
+        ],
+      },
+      { title: "Research Volunteer, Anthropomorphic Robotic Arm", dates: "Oct 2025 – May 2026" },
+    ],
+  },
+  {
+    org: "Flores Engineering",
+    place: "Kearny, NJ",
+    roles: [
+      {
+        title: "Prototype Engineer / Lab Technician (Internship)",
+        dates: "Jul 2026 – Sep 2026",
+        bullets: [
+          "Designed and iterated mechanical parts in Fusion 360, then fabricated and assembled prototypes in the shop",
+          "Operated and maintained FDM and SLA 3D printers and a 3-axis CNC machine for in-shop fabrication",
+          "Developed internal tooling and structured multi-variant BOMs to streamline inventory and part sourcing (project details under NDA)",
+        ],
+      },
+    ],
+  },
+];
+
+export const leadership = [
+  {
+    title: "President, Bergen Robotics (VEX U)",
+    dates: "May 2026 – Present",
+    bullets: [
+      "Promoted to team lead by the coach after contributing to programming and CAD on the team's VEX U robot through a VEX Worlds run",
+      "Coordinate design and programming sub-teams across deadlines and design constraints, keeping a stable shared codebase through robot iterations",
+    ],
+  },
+  {
+    title: "President, STEAM Academics Association",
+    dates: "Dec 2025 – Present",
+    bullets: [
+      "Refocused the club on STEM learning beyond the classroom and on supporting students' paths into four-year programs",
+      "Connected a fellow student with an NJIT admissions counselor and fee waiver; the student was admitted to Computer Science and enrolled in Fall 2026",
+    ],
+  },
+];
+
+export const awards = [
+  "First Place, STEM Research Center Poster Competition (42 teams)",
+  "Leadership Award, Office of Student Life",
+  "Dean's List and Honors List, twice each",
+  "Phi Theta Kappa Scholar",
+];
+
+export const skills = [
+  ["Design and CAD", ["Onshape", "Fusion 360", "Mechanical design and iteration", "Additive manufacturing"]],
+  ["Fabrication", ["FDM and SLA 3D printing", "3-axis CNC", "Soldering", "Mechanical assembly", "Hand tools"]],
+  ["Electronics", ["Circuit prototyping", "Servos, steppers and drivers", "ESP32 and Arduino", "Power distribution"]],
+  ["Languages", ["C/C++", "Python"]],
+];
 
 export const projects = [
   {
@@ -38,13 +122,13 @@ export const projects = [
     title: "Low-Cost Humanoid Arm",
     short: "Humanoid arm",
     meta: [
-      ["When", "Summer 2026"],
+      ["When", "Oct 2025 – Aug 2026"],
       ["Team", "6 people"],
-      ["Role", "Design lead, owned all electronics"],
+      ["Role", "Lead: firmware, circuits, most mechanical design"],
       ["Controller", "ESP32"],
     ],
     summary:
-      "A tendon-driven robotic arm built as a proof of concept for an affordable alternative to commercial prosthetic hands, at about $300 per unit.",
+      "A 12-DOF tendon-driven prosthetic arm, built as a proof of concept for an affordable alternative to commercial myoelectric hands at under $300 per unit.",
     image: { src: "/images/ara-full-arm.png", alt: "CAD render of the full ARA arm, red elbow joint, black forearm and hand", wide: true },
     callouts: [
       { x: 15, y: 62, lx: 24, ly: 128, label: "2-DOF elbow driven by custom 64:1 and 4:1 planetary gearboxes" },
