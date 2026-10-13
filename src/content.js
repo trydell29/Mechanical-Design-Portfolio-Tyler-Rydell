@@ -13,7 +13,7 @@ export const site = {
   linkedin: "https://www.linkedin.com/in/tylerrydell",
   github: "https://github.com/trydell29",
   footer: "Seeking summer 2027 internships in mechanical engineering, robotics, and automation.",
-  resume: "", // later: put resume.pdf in /public and set this to "/resume.pdf"
+  resume: "/Tyler_Rydell_Resume.pdf", // replace this file in /public to update the resume
 };
 
 // The "About me" section near the top of the page.

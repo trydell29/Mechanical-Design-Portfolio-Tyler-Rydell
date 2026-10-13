@@ -409,7 +409,7 @@ export default function App() {
           <ul className="footer__links">
             {links.map((l) => (
               <li key={l.label}>
-                <a href={l.href} target={l.href.startsWith("http") ? "_blank" : undefined} rel="noreferrer">
+                <a href={l.href} target={l.href.startsWith("mailto:") ? undefined : "_blank"} rel="noreferrer">
                   {l.label}
                 </a>
               </li>
