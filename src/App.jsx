@@ -119,7 +119,7 @@ function Figure({ project, active, setActive }) {
 function Project({ project }) {
   const [active, setActive] = useState(null);
   const extras = [
-    ...(project.video ? [{ video: project.video, poster: project.videoPoster, caption: project.videoCaption }] : []),
+    ...(project.videos ?? []).map((v) => ({ video: v.src, poster: v.poster, caption: v.caption })),
     ...project.gallery,
   ];
 
@@ -175,7 +175,16 @@ function Project({ project }) {
       </div>
 
       {extras.length > 0 && (
-        <div className={`gallery ${project.video ? "gallery--has-video" : ""}`} data-reveal>
+        <div
+          className={`gallery ${
+            project.videos?.length
+              ? project.gallery.length
+                ? "gallery--has-video"
+                : "gallery--videos"
+              : ""
+          }`}
+          data-reveal
+        >
           {extras.map((item, i) =>
             item.video ? (
               <figure key={i} className="gallery__item gallery__item--video">

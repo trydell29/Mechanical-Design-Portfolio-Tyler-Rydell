@@ -1,7 +1,8 @@
 // All site text lives in this file. Edit freely; the layout updates on its own.
 //
 // Images and videos go in /public/images and are referenced as "/images/<file>".
-// To add a video: drop the .mp4 into /public/images and set `video` below.
+// To add videos: drop the .mp4 into /public/images and add it to `videos` below
+// ({ src, poster, caption }). Phone videos should be compressed first.
 // To add photos: add entries to `gallery` ({ src, alt, caption }).
 // Callouts: x/y is the feature the arrow points at, lx/ly is where the numbered
 // circle sits. All are percentages of the main image (can go below 0 or above 100
@@ -221,9 +222,13 @@ export const projects = [
     ],
     result:
       "First place out of 42 teams at a multi-institution STEM research poster competition. Presented the follow-up benchmark (BARAA) at the Northeast Robotics Colloquium at Princeton.",
-    video: "/images/ara-demo.mp4",
-    videoPoster: "/images/ara-demo-poster.jpg",
-    videoCaption: "Controlling the arm live at the Bergen STEM research poster competition",
+    videos: [
+      {
+        src: "/images/ara-demo.mp4",
+        poster: "/images/ara-demo-poster.jpg",
+        caption: "Controlling the arm live at the Bergen STEM research poster competition",
+      },
+    ],
     gallery: [
       { src: "/images/ara-hand.png", alt: "CAD render of the ARA hand", caption: "Hand" },
       { src: "/images/ara-elbow.png", alt: "CAD render of the ARA elbow joint", caption: "Elbow joint" },
@@ -268,7 +273,7 @@ export const projects = [
       "Integrated enclosure houses the electronics, with a panel-mount barrel jack for power",
     ],
     result: "",
-    video: "",
+    videos: [],
     gallery: [
       // { src: "/images/lidar-photo.jpg", alt: "Built LiDAR mount", caption: "As built" },
     ],
@@ -293,7 +298,18 @@ export const projects = [
     ],
     notes: [],
     result: "",
-    video: "", // e.g. "/images/head-demo.mp4"
+    videos: [
+      {
+        src: "/images/head-demo-assembled.mp4",
+        poster: "/images/head-demo-assembled-poster.jpg",
+        caption: "The assembled head on its base",
+      },
+      {
+        src: "/images/head-demo-eyes.mp4",
+        poster: "/images/head-demo-eyes-poster.jpg",
+        caption: "Early test of the eye mechanism",
+      },
+    ],
     gallery: [],
   },
   {
@@ -318,7 +334,7 @@ export const projects = [
     ],
     notes: [],
     result: "",
-    video: "",
+    videos: [],
     gallery: [],
   },
 ];

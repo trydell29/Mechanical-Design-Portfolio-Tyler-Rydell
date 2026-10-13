@@ -1380,3 +1380,11 @@ body {
     grid-row: span 2;
   }
 }
+
+/* Videos only: side by side, each in its own panel */
+.gallery--videos {
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+.gallery--videos .gallery__item--video {
+  grid-column: auto;
+}
