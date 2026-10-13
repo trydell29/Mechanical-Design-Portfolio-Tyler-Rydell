@@ -948,6 +948,11 @@ body {
   right: clamp(-180px, -8vw, -40px);
   width: 440px;
 }
+/* Sits below the text and drifts downward as you scroll, away from the title block */
+.geo--sink {
+  bottom: clamp(-300px, -18vw, -180px);
+  transform: translateY(calc((var(--p, 0) - 0.5) * 90px)) rotate(calc(var(--p, 0) * 30deg - 15deg));
+}
 .geo--small {
   width: 340px;
 }

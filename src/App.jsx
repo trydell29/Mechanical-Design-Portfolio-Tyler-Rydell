@@ -6,7 +6,7 @@ const GEO = {
   ara: ["flange", "geo--top"],
   head: ["linkage", "geo--bottom"],
   lidar: ["compass", "geo--top geo--small"],
-  resonance: ["pulleys", "geo--bottom"],
+  resonance: ["pulleys", "geo--bottom geo--sink"],
 };
 
 // Feeds scroll progress into CSS: --page-p on <html> for the progress bar,
