@@ -243,29 +243,6 @@ export const projects = [
     ],
   },
   {
-    id: "head",
-    title: "Animatronic Head",
-    short: "Animatronic head",
-    meta: [
-      ["When", "August 2026"],
-      ["Team", "Solo"],
-      ["Role", "Design, build, code"],
-      ["Controller", "Arduino Uno R4"],
-    ],
-    summary:
-      "A personal build to explore expressive motion: a 2-DOF neck and 2-DOF eyes driven by servo linkages, controllable by joystick or running autonomously.",
-    image: { src: "/images/animatronic-head.png", alt: "CAD render of the animatronic head with two eyeballs on a servo-driven neck" },
-    callouts: [
-      { x: 16, y: 24, lx: -6, ly: 6, label: "2-DOF eyes in spherical housings" },
-      { x: 52, y: 55, lx: 86, ly: 54, label: "Neck pivot" },
-      { x: 30, y: 74, lx: -6, ly: 66, label: "Base servos drive the neck through pushrods" },
-    ],
-    notes: [],
-    result: "",
-    video: "", // e.g. "/images/head-demo.mp4"
-    gallery: [],
-  },
-  {
     id: "lidar",
     title: "LiDAR Alignment Mount",
     short: "LiDAR alignment mount",
@@ -293,6 +270,29 @@ export const projects = [
     gallery: [
       // { src: "/images/lidar-photo.jpg", alt: "Built LiDAR mount", caption: "As built" },
     ],
+  },
+  {
+    id: "head",
+    title: "Animatronic Head",
+    short: "Animatronic head",
+    meta: [
+      ["When", "August 2026"],
+      ["Team", "Solo"],
+      ["Role", "Design, build, code"],
+      ["Controller", "Arduino Uno R4"],
+    ],
+    summary:
+      "A personal build to explore expressive motion: a 2-DOF neck and 2-DOF eyes driven by servo linkages, controllable by joystick or running autonomously.",
+    image: { src: "/images/animatronic-head.png", alt: "CAD render of the animatronic head with two eyeballs on a servo-driven neck" },
+    callouts: [
+      { x: 16, y: 24, lx: -6, ly: 6, label: "2-DOF eyes in spherical housings" },
+      { x: 52, y: 55, lx: 86, ly: 54, label: "Neck pivot" },
+      { x: 30, y: 74, lx: -6, ly: 66, label: "Base servos drive the neck through pushrods" },
+    ],
+    notes: [],
+    result: "",
+    video: "", // e.g. "/images/head-demo.mp4"
+    gallery: [],
   },
   {
     id: "resonance",
