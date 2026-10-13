@@ -52,9 +52,10 @@ export const experience = [
         title: "Prototype Engineer / Lab Technician (Internship)",
         dates: "Jul 2026 – Sep 2026",
         bullets: [
-          "Designed and iterated mechanical parts in Fusion 360, then fabricated and assembled prototypes in the shop",
-          "Operated and maintained FDM and SLA 3D printers and a 3-axis CNC machine for in-shop fabrication",
-          "Developed internal tooling and structured multi-variant BOMs to streamline inventory and part sourcing (project details under NDA)",
+          "Designed and iterated mechanical parts in Fusion 360, then sourced the hardware and fabricated and assembled prototypes in the shop",
+          "Assembled and tested full prototypes, troubleshooting fit, wiring, and control code to get builds working reliably",
+          "Operated and maintained FDM and SLA 3D printers and a 3-axis CNC machine supporting in-shop fabrication",
+          "Developed internal tooling, a shop inventory system, and structured multi-variant BOMs to streamline inventory and part sourcing (project details under NDA)",
         ],
       },
     ],
@@ -199,7 +200,7 @@ export const skills = [
 export const projects = [
   {
     id: "ara",
-    title: "Low-Cost Humanoid Arm",
+    title: "ARMin: Low-Cost Humanoid Arm",
     short: "Humanoid arm",
     meta: [
       ["When", "Oct 2025 – Aug 2026"],
