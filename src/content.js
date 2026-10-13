@@ -26,7 +26,7 @@ export const about = {
     "Long term, I'm working toward a PhD in robotics.",
   ],
   facts: [
-    ["Education", "A.S. Engineering Science, Bergen Community College (expected May 2027)"],
+    ["Education", "A.S. Engineering Science, Bergen Community College (May 2027)"],
     ["GPA", "4.0 / 4.0"],
     // A list value shows one item per line across the full width.
     ["Leadership", ["President, Bergen Robotics (VEX U)", "President, STEAM Academics Association"]],
