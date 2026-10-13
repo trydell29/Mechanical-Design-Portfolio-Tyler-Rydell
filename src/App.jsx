@@ -320,9 +320,19 @@ function About() {
         </div>
         <dl className="titleblock about__facts">
           {about.facts.map(([k, v]) => (
-            <div key={k}>
+            <div key={k} className={Array.isArray(v) ? "is-wide" : undefined}>
               <dt>{k}</dt>
-              <dd>{v}</dd>
+              <dd>
+                {Array.isArray(v) ? (
+                  <ul className="facts__list">
+                    {v.map((item) => (
+                      <li key={item}>{item}</li>
+                    ))}
+                  </ul>
+                ) : (
+                  v
+                )}
+              </dd>
             </div>
           ))}
         </dl>

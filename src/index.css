@@ -1306,3 +1306,35 @@ body {
     transform: none !important;
   }
 }
+
+/* About facts: list values span the full width, one item per line */
+.titleblock div.is-wide {
+  grid-column: 1 / -1;
+  border-right: 0;
+  border-bottom: 1px solid var(--rule);
+}
+.titleblock div.is-wide:last-child {
+  border-bottom: 0;
+}
+.facts__list {
+  list-style: none;
+  margin: 2px 0 0;
+  padding: 0;
+}
+.facts__list li {
+  position: relative;
+  padding-left: 14px;
+}
+.facts__list li + li {
+  margin-top: 4px;
+}
+.facts__list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.6em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent);
+}
