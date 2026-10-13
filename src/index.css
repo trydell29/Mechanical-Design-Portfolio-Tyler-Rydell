@@ -1393,3 +1393,46 @@ body {
 .gallery--videos .gallery__item--video {
   grid-column: auto;
 }
+
+/* A single clip placed in the text column, under the title block */
+.inline-video {
+  margin: 24px 0 0;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 16px;
+  align-items: end;
+}
+.inline-video video {
+  height: 360px;
+  width: auto;
+  max-width: 100%;
+  border-radius: 8px;
+  border: 1px solid var(--rule);
+  background: #000;
+  box-shadow: 0 30px 60px -36px rgba(0, 0, 0, 0.8);
+}
+.inline-video figcaption {
+  color: var(--muted);
+  font-size: 0.9375rem;
+  line-height: 1.45;
+  padding-bottom: 4px;
+}
+@media (max-width: 860px) {
+  .inline-video {
+    grid-template-columns: 1fr;
+  }
+  .inline-video video {
+    height: min(440px, 60vh);
+    width: auto;
+  }
+}
+
+/* Drawing sheet grows to match the text column when a clip sits beside it */
+@media (min-width: 861px) {
+  .project__body--inline-video .figure {
+    align-self: stretch;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

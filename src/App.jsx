@@ -4,7 +4,7 @@ import { Geo, Divider } from "./Geometry.jsx";
 
 const GEO = {
   ara: ["flange", "geo--top"],
-  head: ["linkage", "geo--bottom"],
+  head: ["linkage", "geo--bottom geo--sink"],
   lidar: ["compass", "geo--top geo--small"],
   resonance: ["pulleys", "geo--bottom geo--sink"],
 };
@@ -158,10 +158,10 @@ function Figure({ project, active, setActive }) {
 
 function Project({ project }) {
   const [active, setActive] = useState(null);
-  const extras = [
-    ...(project.videos ?? []).map((v) => ({ video: v.src, poster: v.poster, caption: v.caption })),
-    ...project.gallery,
-  ];
+  const videos = (project.videos ?? []).map((v) => ({ video: v.src, poster: v.poster, caption: v.caption }));
+  // With no extra renders, a single clip sits in the text column beside the main figure.
+  const inlineVideo = project.gallery.length === 0 && videos.length === 1 ? videos[0] : null;
+  const extras = [...(inlineVideo ? [] : videos), ...project.gallery];
 
   return (
     <section className="project" id={project.id} aria-labelledby={`${project.id}-title`}>
@@ -173,7 +173,11 @@ function Project({ project }) {
         {project.status && <span className="status">{project.status}</span>}
       </div>
 
-      <div className={`project__body ${project.image.wide ? "project__body--wide" : ""}`}>
+      <div
+        className={`project__body ${project.image.wide ? "project__body--wide" : ""} ${
+          inlineVideo ? "project__body--inline-video" : ""
+        }`}
+      >
         <Figure project={project} active={active} setActive={setActive} />
 
         <div className="project__text" data-reveal>
@@ -211,6 +215,13 @@ function Project({ project }) {
               </div>
             ))}
           </dl>
+
+          {inlineVideo && (
+            <figure className="inline-video">
+              <ScrollVideo src={inlineVideo.video} poster={inlineVideo.poster} />
+              {inlineVideo.caption && <figcaption>{inlineVideo.caption}</figcaption>}
+            </figure>
+          )}
         </div>
       </div>
 
