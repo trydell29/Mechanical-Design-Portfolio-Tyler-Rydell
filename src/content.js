@@ -33,8 +33,23 @@ export const about = {
   ],
 };
 
-// Work and research history, newest first. Roles without bullets show as one line.
+// Work and research history, in display order. Roles without bullets show as one line.
 export const experience = [
+  {
+    org: "Flores Engineering",
+    place: "Kearny, NJ",
+    roles: [
+      {
+        title: "Prototype Engineer / Lab Technician (Internship)",
+        dates: "Jul 2026 – Sep 2026",
+        bullets: [
+          "Designed and iterated mechanical parts in Fusion 360, then fabricated and assembled prototypes in the shop",
+          "Operated and maintained FDM and SLA 3D printers and a 3-axis CNC machine for in-shop fabrication",
+          "Developed internal tooling and structured multi-variant BOMs to streamline inventory and part sourcing (project details under NDA)",
+        ],
+      },
+    ],
+  },
   {
     org: "STEM Research Center, Bergen Community College",
     place: "Paramus, NJ",
@@ -64,21 +79,6 @@ export const experience = [
         ],
       },
       { title: "Research Volunteer, Anthropomorphic Robotic Arm", dates: "Oct 2025 – May 2026" },
-    ],
-  },
-  {
-    org: "Flores Engineering",
-    place: "Kearny, NJ",
-    roles: [
-      {
-        title: "Prototype Engineer / Lab Technician (Internship)",
-        dates: "Jul 2026 – Sep 2026",
-        bullets: [
-          "Designed and iterated mechanical parts in Fusion 360, then fabricated and assembled prototypes in the shop",
-          "Operated and maintained FDM and SLA 3D printers and a 3-axis CNC machine for in-shop fabrication",
-          "Developed internal tooling and structured multi-variant BOMs to streamline inventory and part sourcing (project details under NDA)",
-        ],
-      },
     ],
   },
 ];
