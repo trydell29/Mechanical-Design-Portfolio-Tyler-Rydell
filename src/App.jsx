@@ -207,21 +207,29 @@ function Project({ project }) {
 
           {project.result && <p className="result">{project.result}</p>}
 
-          <dl className="titleblock">
-            {project.meta.map(([k, v]) => (
-              <div key={k}>
-                <dt>{k}</dt>
-                <dd>{v}</dd>
+          {(() => {
+            const block = (
+              <dl className={`titleblock ${inlineVideo ? "titleblock--stack" : ""}`}>
+                {project.meta.map(([k, v]) => (
+                  <div key={k}>
+                    <dt>{k}</dt>
+                    <dd>{v}</dd>
+                  </div>
+                ))}
+              </dl>
+            );
+            if (!inlineVideo) return block;
+            // A single clip sits beside the title block, which stacks into one column.
+            return (
+              <div className="media-row">
+                <figure className="inline-video">
+                  <ScrollVideo src={inlineVideo.video} poster={inlineVideo.poster} />
+                  {inlineVideo.caption && <figcaption>{inlineVideo.caption}</figcaption>}
+                </figure>
+                {block}
               </div>
-            ))}
-          </dl>
-
-          {inlineVideo && (
-            <figure className="inline-video">
-              <ScrollVideo src={inlineVideo.video} poster={inlineVideo.poster} />
-              {inlineVideo.caption && <figcaption>{inlineVideo.caption}</figcaption>}
-            </figure>
-          )}
+            );
+          })()}
         </div>
       </div>
 
