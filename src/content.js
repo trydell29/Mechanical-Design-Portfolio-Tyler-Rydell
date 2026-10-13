@@ -35,8 +35,8 @@ export const about = {
 export const projects = [
   {
     id: "ara",
-    title: "ARA: Low-Cost Anthropomorphic Robotic Arm",
-    short: "ARA robotic arm",
+    title: "Low-Cost Humanoid Arm",
+    short: "Humanoid arm",
     meta: [
       ["When", "Summer 2026"],
       ["Team", "6 people"],
