@@ -279,7 +279,7 @@ export const projects = [
       ["When", "August 2026"],
       ["Team", "Solo"],
       ["Role", "Design, build, code"],
-      ["Engineering focus", "Linkage kinematics, servo control, and motion programming"],
+      ["Application", "Expressive heads for social and humanoid robots"],
     ],
     summary:
       "A personal build to explore expressive motion: a 2-DOF neck and 2-DOF eyes driven by servo linkages, controllable by joystick or running autonomously.",
