@@ -205,7 +205,7 @@ export const projects = [
     meta: [
       ["When", "Oct 2025 – Aug 2026"],
       ["Team", "6 people"],
-      ["Role", "Lead: firmware, circuits, most mechanical design"],
+      ["Role", "I lead mechanical and ciruit deisgn, as well as wrote the control code"],
       ["Tools", "Onshape, C++, Python, ESP32"],
     ],
     summary:
@@ -221,7 +221,7 @@ export const projects = [
       "ESP32 control portal with manual, preset, and camera-based hand tracking modes",
     ],
     result:
-      "First place out of 42 teams at a multi-institution STEM research poster competition. Presented the follow-up benchmark (BARAA) at the Northeast Robotics Colloquium at Princeton.",
+      "First place out of 42 teams at a multi-institution STEM research poster competition. Presented out the follow-up research (BARAA) at the Northeast Robotics Colloquium at Princeton University.",
     videos: [
       {
         src: "/images/ara-demo.mp4",
@@ -289,12 +289,12 @@ export const projects = [
       ["Application", "Expressive heads for social and humanoid robots"],
     ],
     summary:
-      "A personal build to explore expressive motion: a 2-DOF neck and 2-DOF eyes driven by servo linkages, controllable by joystick or running autonomously.",
+      "A personal build to explore animatronic and humanoid mechanisms: a 2-DOF neck and 2-DOF eyes driven by servo linkages, controllable by joystick or running autonomously.",
     image: { src: "/images/animatronic-head.png", alt: "CAD render of the animatronic head with two eyeballs on a servo-driven neck" },
     callouts: [
       { x: 16, y: 24, lx: -6, ly: 6, label: "2-DOF eyes in spherical housings" },
       { x: 52, y: 55, lx: 86, ly: 54, label: "Neck pivot" },
-      { x: 30, y: 74, lx: -6, ly: 66, label: "Base servos drive the neck through pushrods" },
+      { x: 30, y: 74, lx: -6, ly: 66, label: "Base servos drive the neck through linkages" },
     ],
     notes: [],
     result: "",
@@ -316,7 +316,7 @@ export const projects = [
       ["When", "Fall 2026"],
       ["Team", "Solo honors project"],
       ["Advisor", "Dr. Neel Haldolaarachchige"],
-      ["Research goal", "Wireless, phone-based resonance detection for physics labs"],
+      ["Research goal", "Wireless resonance detection for physics labs"],
     ],
     summary:
       "A self-contained, rechargeable wireless device for sound wave labs. It reads microphone data on a microcontroller and sends it to a student's iPhone to detect resonance states.",
