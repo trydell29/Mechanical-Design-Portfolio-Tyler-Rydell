@@ -100,6 +100,7 @@ export const leadership = [
     bullets: [
       "Promoted to team lead by the coach after contributing to programming and CAD on the team's VEX U robot through a VEX Worlds run",
       "Coordinate design and programming sub-teams across deadlines and design constraints, keeping a stable shared codebase through robot iterations",
+      "Increased team membership from 10 to 30 members",
     ],
   },
   {
@@ -107,6 +108,7 @@ export const leadership = [
     dates: "Dec 2025 – Present",
     bullets: [
       "Refocused the club on STEM learning beyond the classroom and on supporting students' paths into four-year programs",
+      "Introduced students to aerospace engineering through hobby rocketry",
       "Connected a fellow student with an NJIT admissions counselor and fee waiver; the student was admitted to Computer Science and enrolled in Fall 2026",
     ],
   },
