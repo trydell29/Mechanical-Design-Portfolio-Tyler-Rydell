@@ -1,5 +1,49 @@
 import { useEffect, useRef, useState } from "react";
 import { site, about, projects } from "./content.js";
+import { Geo, Divider } from "./Geometry.jsx";
+
+const GEO = {
+  ara: ["flange", "geo--top"],
+  head: ["linkage", "geo--bottom"],
+  lidar: ["compass", "geo--top geo--small"],
+  resonance: ["pulleys", "geo--bottom"],
+};
+
+// Feeds scroll progress into CSS: --page-p on <html> for the progress bar,
+// and --p (0 to 1) on every [data-geo] element as it travels up the screen.
+function useScrollVars() {
+  useEffect(() => {
+    const root = document.documentElement;
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    let frame = 0;
+    const update = () => {
+      frame = 0;
+      const vh = window.innerHeight;
+      const max = root.scrollHeight - vh;
+      root.style.setProperty("--page-p", max > 0 ? (window.scrollY / max).toFixed(4) : "0");
+      document.querySelectorAll("[data-geo]").forEach((el) => {
+        if (reduce) {
+          el.style.setProperty("--p", "1");
+          return;
+        }
+        const r = el.getBoundingClientRect();
+        const p = Math.min(1, Math.max(0, (vh - r.top) / (vh * 0.75 + r.height * 0.4)));
+        el.style.setProperty("--p", p.toFixed(3));
+      });
+    };
+    const onScroll = () => {
+      if (!frame) frame = requestAnimationFrame(update);
+    };
+    update();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+      cancelAnimationFrame(frame);
+    };
+  }, []);
+}
 
 // Adds "is-visible" to any [data-reveal] element once it scrolls into view.
 function useReveal() {
@@ -81,8 +125,11 @@ function Project({ project }) {
 
   return (
     <section className="project" id={project.id} aria-labelledby={`${project.id}-title`}>
+      {GEO[project.id] && <Geo kind={GEO[project.id][0]} className={GEO[project.id][1]} />}
       <div className="project__head" data-reveal>
-        <h2 id={`${project.id}-title`}>{project.title}</h2>
+        <h2 id={`${project.id}-title`}>
+          <span className="wipe">{project.title}</span>
+        </h2>
         {project.status && <span className="status">{project.status}</span>}
       </div>
 
@@ -97,6 +144,7 @@ function Project({ project }) {
               <li
                 key={i}
                 className={active === i ? "is-active" : ""}
+                style={{ "--i": i }}
                 onMouseEnter={() => setActive(i)}
               >
                 <span className="callouts__num">{i + 1}</span>
@@ -146,8 +194,8 @@ function Project({ project }) {
         <div className="presented" data-reveal>
           <h3>Presented at</h3>
           <div className="presented__grid">
-            {project.presentations.map((item) => (
-              <figure key={item.src} className="presented__item">
+            {project.presentations.map((item, i) => (
+              <figure key={item.src} className="presented__item" style={{ "--i": i }}>
                 <img src={item.src} alt={item.alt} loading="lazy" />
                 <figcaption>
                   <strong>{item.title}</strong>
@@ -188,6 +236,7 @@ function About() {
 
 export default function App() {
   useReveal();
+  useScrollVars();
   const links = [
     site.email && { href: `mailto:${site.email}`, label: "Email" },
     site.linkedin && { href: site.linkedin, label: "LinkedIn" },
@@ -199,14 +248,27 @@ export default function App() {
     <>
       <a className="skip" href="#work">Skip to projects</a>
 
+      <div className="progress" aria-hidden="true" />
+
       <header className="hero">
+        <Geo kind="compass" className="geo--hero" />
         <div className="wrap">
-          <h1 className="hero__name" data-reveal>{site.name}</h1>
-          <nav className="hero__index" data-reveal aria-labelledby="project-list-title">
+          <h1 className="hero__name" aria-label={site.name}>
+            {site.name.split(" ").map((word, w) => (
+              <span key={w} className="hero__word" aria-hidden="true">
+                {word.split("").map((ch, i) => (
+                  <span key={i} className="hero__char" style={{ "--i": w * 6 + i }}>
+                    {ch}
+                  </span>
+                ))}
+              </span>
+            ))}
+          </h1>
+          <nav className="hero__index" aria-labelledby="project-list-title">
             <h2 id="project-list-title" className="hero__index-title">Projects</h2>
             <ul>
-              {projects.map((p) => (
-                <li key={p.id}>
+              {projects.map((p, i) => (
+                <li key={p.id} style={{ "--i": i }}>
                   <a href={`#${p.id}`}>
                     <span className="hero__index-name">{p.short}</span>
                     <span className="hero__index-when">{p.meta.find(([k]) => k === "When")?.[1]}</span>
@@ -221,8 +283,11 @@ export default function App() {
       <About />
 
       <main id="work" className="wrap">
-        {projects.map((p) => (
-          <Project key={p.id} project={p} />
+        {projects.map((p, i) => (
+          <div key={p.id}>
+            {i > 0 && <Divider />}
+            <Project project={p} />
+          </div>
         ))}
       </main>
 
