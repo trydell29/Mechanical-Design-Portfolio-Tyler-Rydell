@@ -230,7 +230,7 @@ export const projects = [
     image: { src: "/images/resonance-finder.png", alt: "CAD render of the Resonance Finder enclosure with a lit push button" },
     callouts: [
       { x: 39.6, y: 22.2, lx: 10, ly: 4, label: "Microphone, mounted flush in the lid" },
-      { x: 86.3, y: 35.7, lx: 104, ly: 22, label: "Hex screws hold the removable lid for access to the electronics" },
+      { x: 79, y: 37, lx: 104, ly: 22, label: "Removable latching lid for access to the electronics" },
       { x: 73.3, y: 56, lx: 104, ly: 48, label: "USB-C port for charging and programming" },
       { x: 74.7, y: 71.3, lx: 104, ly: 80, label: "Power switch" },
     ],
