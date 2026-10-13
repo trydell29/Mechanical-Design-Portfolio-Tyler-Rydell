@@ -275,8 +275,10 @@ function Leadership() {
           <h3>Awards and honors</h3>
           <ul>
             {awards.map((a, i) => (
-              <li key={a} style={{ "--i": i }}>
-                {a}
+              <li key={a.title} style={{ "--i": i }}>
+                <span className="awards__title">{a.title}</span>
+                <span className="awards__meta">{[a.issuer, a.date].filter(Boolean).join(", ")}</span>
+                {a.note && <span className="awards__note">{a.note}</span>}
               </li>
             ))}
           </ul>

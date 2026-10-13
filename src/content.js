@@ -22,7 +22,7 @@ export const about = {
   heading: "About me",
   paragraphs: [
     "I'm an Engineering Science student at Bergen Community College with a 4.0 GPA, transferring as a mechanical engineering major in Fall 2027. I design and build electromechanical systems: tendon-driven robotic hands, animatronics, precision fixtures, and the electronics that run them.",
-    "I came to Bergen to play baseball and study physical therapy, and found engineering instead. Since then I've led the design of a low-cost prosthetic arm that took first place out of 42 teams and went on to the Northeast Robotics Colloquium at Princeton, and built prototypes as an engineering intern at Flores Engineering. Today I teach soldering and 3D printing at Bergen's STEM Research Center and lead Bergen Robotics, our VEX U team.",
+    "I came to Bergen to play baseball and study physical therapy, and found engineering instead. Since then I've led the design of a low-cost prosthetic arm that took first place out of 42 teams and went on to the Northeast Robotics Colloquium at Princeton, and built prototypes as an engineering intern at Flores Engineering. Today I teach soldering and 3D printing at Bergen's STEM Research Center and lead Bergen Robotics, our VEX U team, which qualified for the VEX U World Championship.",
     "Long term, I'm working toward a PhD in robotics.",
   ],
   facts: [
@@ -111,18 +111,89 @@ export const leadership = [
   },
 ];
 
+// Newest first. "note" is optional.
 export const awards = [
-  "First Place, STEM Research Center Poster Competition (42 teams)",
-  "Leadership Award, Office of Student Life",
-  "Dean's List and Honors List, twice each",
-  "Phi Theta Kappa Scholar",
+  {
+    title: "Poster Presenter, Northeast Robotics Colloquium (NERC) 2026",
+    issuer: "Princeton University",
+    date: "Oct 2026",
+    note: "Presented BARAA with a live demo of the arm performing GRASP taxonomy grasps",
+  },
+  {
+    title: "First Place, STEM Research Center Research Poster Competition",
+    issuer: "Bergen Community College",
+    date: "Aug 2026",
+    note: "Voted first of 42 teams across multiple institutions",
+  },
+  {
+    title: "Leadership Award",
+    issuer: "Bergen Community College Office of Student Life",
+    date: "Apr 2026",
+    note: "For leading both the Robotics Team and the STEAM Academics Association",
+  },
+  {
+    title: "Qualified for the VEX U World Championship",
+    issuer: "Robotics Education and Competition Foundation",
+    date: "Mar 2026",
+  },
+  {
+    title: "Judges Award, MCCC Annual VEX U Qualifier",
+    issuer: "Monroe County Community College",
+    date: "Jan 2026",
+    note: "For outstanding documentation and engineering design process",
+  },
+  {
+    title: "Phi Theta Kappa Honor Society",
+    issuer: "Bergen Community College",
+    date: "Jan 2026",
+  },
+  {
+    title: "Judith K. Winn School of Honors",
+    issuer: "Bergen Community College",
+    date: "Sep 2025",
+  },
+  {
+    title: "Dean's List (2x) and Honors List (2x)",
+    issuer: "Bergen Community College",
+  },
 ];
 
+// Matches the skills on LinkedIn, grouped for the page.
 export const skills = [
-  ["Design and CAD", ["Onshape", "Fusion 360", "Mechanical design and iteration", "Additive manufacturing"]],
-  ["Fabrication", ["FDM and SLA 3D printing", "3-axis CNC", "Soldering", "Mechanical assembly", "Hand tools"]],
-  ["Electronics", ["Circuit prototyping", "Servos, steppers and drivers", "ESP32 and Arduino", "Power distribution"]],
-  ["Languages", ["C/C++", "Python"]],
+  [
+    "Design and CAD",
+    [
+      "Computer-Aided Design (CAD)",
+      "Onshape",
+      "Autodesk Fusion 360",
+      "Mechanical Product Design",
+      "Design for Manufacturing",
+      "Technical Documentation and BOMs",
+    ],
+  ],
+  [
+    "Prototyping and Fabrication",
+    [
+      "Rapid Prototyping",
+      "3D Printing (FDM and SLA)",
+      "3-Axis CNC Machining",
+      "Product Assembly",
+      "Soldering",
+      "Troubleshooting",
+    ],
+  ],
+  [
+    "Electronics and Robotics",
+    [
+      "Robotics",
+      "Circuit Design",
+      "Breadboarding",
+      "Microcontrollers (ESP32, Arduino)",
+      "Servos, Steppers and Drivers",
+      "Power Distribution and Wiring",
+    ],
+  ],
+  ["Software", ["C++", "Python", "Version Control (Git)", "Artificial Intelligence (AI)"]],
 ];
 
 export const projects = [
@@ -161,7 +232,7 @@ export const projects = [
         src: "/images/nerc-princeton.jpg",
         alt: "Tyler standing next to the BARAA research poster at the Northeast Robotics Colloquium",
         title: "Northeast Robotics Colloquium (NERC), Princeton University",
-        caption: "October 2026. Presented BARAA, our benchmark for the mechanical ability of humanoid and prosthetic arms, with this arm as the first reference design.",
+        caption: "October 2026. Presented BARAA, our benchmark for the mechanical ability of humanoid and prosthetic arms, with this arm as the first reference design and a live demo of its grasps.",
       },
       {
         src: "/images/bergen-poster-competition.jpg",

@@ -1338,3 +1338,26 @@ body {
   border-radius: 50%;
   background: var(--accent);
 }
+
+/* Awards entries: title, issuer and date, optional note */
+.awards li {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.awards__meta {
+  font-weight: 400;
+  font-size: 0.875rem;
+  color: var(--muted);
+}
+.awards__note {
+  font-weight: 400;
+  font-size: 0.9375rem;
+  color: #d3deeb;
+  margin-top: 2px;
+}
+
+/* Skills: groups wrap to fit */
+.skills {
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
