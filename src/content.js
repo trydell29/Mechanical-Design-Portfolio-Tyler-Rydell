@@ -250,7 +250,7 @@ export const projects = [
       ["When", "September 2026"],
       ["Team", "Solo design within Dr. Joseph Sivo's research team"],
       ["Role", "Mechanical and electrical design"],
-      ["Tools", "Onshape, Arduino Nano"],
+      ["Research goal", "Measure the drag coefficients of falling objects"],
     ],
     summary:
       "A precision mount for a LiDAR module used to measure the velocity and acceleration of falling objects and extract their drag coefficients.",
@@ -279,7 +279,7 @@ export const projects = [
       ["When", "August 2026"],
       ["Team", "Solo"],
       ["Role", "Design, build, code"],
-      ["Tools", "Onshape, Arduino Uno R4"],
+      ["Design goal", "Lifelike motion from simple, low-cost servo linkages"],
     ],
     summary:
       "A personal build to explore expressive motion: a 2-DOF neck and 2-DOF eyes driven by servo linkages, controllable by joystick or running autonomously.",
@@ -303,7 +303,7 @@ export const projects = [
       ["When", "Fall 2026"],
       ["Team", "Solo honors project"],
       ["Advisor", "Dr. Neel Haldolaarachchige"],
-      ["Tools", "Onshape, ESP32-C3"],
+      ["Research goal", "Wireless, phone-based resonance detection for physics labs"],
     ],
     summary:
       "A self-contained, rechargeable wireless device for sound wave labs. It reads microphone data on a microcontroller and sends it to a student's iPhone to detect resonance states.",
